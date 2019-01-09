@@ -73,6 +73,15 @@ class mainScene {
 
     // display the updated score on the screen
     this.scoreText.setText('score: ' + this.score)
+
+    // create a tween to modify player for each hit
+    this.tweens.add({
+      targets: this.player,
+      duration: 400,
+      scaleX: 1.5,
+      scaleY: 1.5,
+      yoyo: true
+    })
   }
 }
 
