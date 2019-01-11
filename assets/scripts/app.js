@@ -6,7 +6,7 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 // import 'phaser'
-import {mainScene} from './scenes/game'
+import {mainScene} from './scenes/gameplay'
 
 $(() => {
   
