@@ -1,8 +1,5 @@
 'use strict'
 
-const store = {
-    scenes: []
+const scenes = []
 
-}
-
-module.exports = store
+module.exports = scenes
