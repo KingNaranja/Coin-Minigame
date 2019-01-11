@@ -7,7 +7,8 @@ module.exports = {
   options: {
     entry: {
       application: './index.js',
-      vendor: ['jquery']
+      vendor: ['jquery'],
+      game: ['phaser']
     },
 
     output: {
@@ -18,9 +19,10 @@ module.exports = {
 
     plugins: [
       new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor',
+        names: ['vendor','game'],
         minChunks: Infinity
       }),
+      
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
