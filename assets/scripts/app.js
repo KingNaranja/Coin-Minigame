@@ -22,7 +22,6 @@ const config = {
   physics: {default: 'arcade'}
   
 }
-
 const game = new Phaser.Game(config)
 
 

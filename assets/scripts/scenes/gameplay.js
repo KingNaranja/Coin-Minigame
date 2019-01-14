@@ -1,35 +1,61 @@
 // game file 
 
 class mainScene extends Phaser.Scene {
-    // load game assets
+  
+    // load monster game assets 
     preload() {
       console.log('mainscene is loading assets')
+      this.load.image('platform', './assets/monster/platform.png')
       this.load.image('player','./assets/monster/player.png')
       this.load.image('coin', './assets/monster/coin.png')
+      
     }
   
   
     // initialize the scene
     create() {
+      // set world gravity 
+      this.physics.world.gravity.y = 50
+      
+      
+      // create a platform game object 
+      // that is immovable 
+      this.platform = this.physics.add.sprite(250,5, 'platform')
+      this.platform.body.moves = false
+      
+      
       // the player is stored inside this.player 
-      // create player with phsyics engine 
+      // collideWorldbounds prevents the player from falling through the floor
       this.player = this.physics.add.sprite(100,180,'player')
+      this.player.body.collideWorldBounds = true 
+       
+      
+      // creates a coin object
+      // that is immovable  
       this.coin = this.physics.add.sprite(300,300, 'coin')
-  
-      // the game score is stored in a variable 
-      this.score = 0 
+      this.coin.body.moves = false
+      
+      
+      
+      this.score = 0 // the game score is stored in a variable 
       let style = { font: '20px Arial', fill: '#fff' };
       // use style to display score in the top left corner
-      this.scoreText = this.add.text(20, 20, 'score: ' + this.score, style);
+      this.scoreText = this.add.text(20, 20, 'score: ' + this.score, style)
   
       // assign arrow key inputs 
       this.arrow = this.input.keyboard.createCursorKeys();
-  
-  
-  
+      
+      // set game bounderies so that player 
+      // can not fall through ground platform 
+      this.physics.world.bounds.height =  350 // game world height == 400
+      
+
     }
+
     // game logic
     update() {
+      
+
       // check if player is overlapping
       // If the player is overlapping with the coin
       if (this.physics.overlap(this.player, this.coin)) {
@@ -40,17 +66,17 @@ class mainScene extends Phaser.Scene {
       // Handle horizontal movements
       if (this.arrow.right.isDown) {
         // If the right arrow is pressed, move to the right
-            this.player.x += 3;
+            this.player.x += 3
       } else if (this.arrow.left.isDown) {
         // If the left arrow is pressed, move to the left
-            this.player.x -= 3;
+            this.player.x -= 3
       } 
       
-      // Do the same for vertical movements
+      // handle vertical movements
       if (this.arrow.down.isDown) {
-        this.player.y += 3;
+        this.player.y += 3
       } else if (this.arrow.up.isDown) {
-        this.player.y -= 3;
+        this.player.y -= 3
       } 
       
   
@@ -62,7 +88,7 @@ class mainScene extends Phaser.Scene {
 
       // randomly change the position of x and y
       this.coin.x = Phaser.Math.Between(100,600)
-      this.coin.y = Phaser.Math.Between(100,300);
+      this.coin.y = Phaser.Math.Between(100,300)
   
       // increment the game score
       this.score += 10
@@ -71,7 +97,7 @@ class mainScene extends Phaser.Scene {
       this.scoreText.setText('score: ' + this.score)
       
       // tweens modify object properties over a period of time
-      // create a tween to modify player for each hit
+      // creates a tween to enlarge player for each hit
       this.tweens.add({
         targets: this.player,
         duration: 400,

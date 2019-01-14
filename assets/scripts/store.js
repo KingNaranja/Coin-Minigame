@@ -1,5 +1,5 @@
 'use strict'
 
-const scenes = []
+const scenes = {}
 
 module.exports = scenes
