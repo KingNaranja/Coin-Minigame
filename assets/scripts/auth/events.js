@@ -50,11 +50,11 @@ const onSignIn = event => {
     event.preventDefault()
   
     const data = getFormFields(event.target)
-  
+    
     api.signIn(data)
       .then(ui.signInSuccess)
-      // after successful ui response, then triggers gets all posts function in post/post-event
-      .then(posts.onGetAllPosts)
+      // after successful ui response, then triggers gets all games function in game/game-event
+    //   .then(posts.onGetAllGames)
       .catch(ui.signInFailure)
   }
   

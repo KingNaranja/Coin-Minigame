@@ -1,1 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
+@import '~toastr/build/toastr.css';
+
+#game-container {
+    display: none;
+}
