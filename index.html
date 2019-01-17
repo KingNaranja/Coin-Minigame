@@ -17,37 +17,98 @@
       
       <main>
 
+        <!-- User Auth Form Events  -->
+        <div id="userForms">
+
+            <!-- sign-up -->
+            <form id="sign-up">
+              <fieldset>
+                <legend>Sign Up to Play !</legend>
+                <input type="text" name="credentials[email]" placeholder="Email">
+                <input type="text" name="nickname" placeholder="Nickname (required)">
+                <input type="password" name="credentials[password]" placeholder="Password">
+                <input type="password" name="credentials[password_confirmation]" placeholder="Comfirm Password">
+                <input type="submit" value="Sign-Up">
+  
+              </fieldset>
+            </form>
+  
+            <!-- sign-in -->
+            <form id="sign-in">
+                <fieldset>
+                  <legend>Login !</legend>
+                  <input type="text" name="credentials[email]" placeholder="Email">
+                  <input type="password" name="credentials[password]" placeholder="Password">
+                  <input type="submit" value="Sign-In">
+                </fieldset>
+              </form>
+              <button type ='button' id="show-auth-modal">Change Password/Logout</button>
+
+          </div>
+
           <div id="game-container">
               <div id='game'></div>
               <h3>Use the Arrow Keys to Move. Collect the Coins !</h3>
           </div>
 
-          <div id="userForms">
-
-              <!-- sign-up -->
-              <form id="sign-up">
-                <fieldset>
-                  <legend>Sign Up to Play !</legend>
-                  <input type="text" name="credentials[email]" placeholder="Email">
-                  <input type="text" name="nickname" placeholder="Nickname (required)">
-                  <input type="password" name="credentials[password]" placeholder="Password">
-                  <input type="password" name="credentials[password_confirmation]" placeholder="Comfirm Password">
-                  <input type="submit" value="Sign-Up">
-    
-                </fieldset>
-              </form>
-    
-              <!-- sign-in -->
-              <form id="sign-in">
-                  <fieldset>
-                    <legend>Login !</legend>
-                    <input type="text" name="credentials[email]" placeholder="Email">
-                    <input type="password" name="credentials[password]" placeholder="Password">
-                    <input type="submit" value="Sign-In">
-                  </fieldset>
-                </form>
-            </div>
       </main>
+
+      <!-- change pass/logout modal -->
+			<div class='modal fade' id='user-modal'>
+					<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="userModalLabel">User Menu</h5>
+							<button type="button" class="close dismiss" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&otimes;</span>
+							</button>
+						</div>
+						<div id='user-menu' class="modal-body">
+							<div id=user-auth-error class='error'></div>
+							<h2 id="changePassResponse"></h2>
+
+
+							<form id='change-password-form'>
+								<legend>Change Password</legend>
+								<div>
+								<div>
+									<label>Old Password</label>
+									<div id='old-pass-error' class='error'></div>
+								</div>
+									<input class='pass-form' name='passwords[old]' type='password'>
+								</div>
+								<div class='w-100'></div>
+								<div>
+									<div>
+										<label>New Password</label>
+										<div id='new-pass-error' class='error'></div>
+									</div>
+									<input class='pass-form' name='passwords[new]' type='password'>
+								</div>
+								<input id="change-pass" type="submit" value='Confirm'>
+							</form>
+							<button id='launch-change-password' class='btn btn-secondary form-button'>Change Password</button>
+							<button id="sign-out" class='btn btn-secondary form-button'>Sign Out</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+      <div class='modal fade' id='update-modal'>
+					<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="userModalLabel">User Menu</h5>
+							<button type="button" class="close dismiss" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&otimes;</span>
+							</button>
+						</div>
+						<div id='update-modal-body' class="modal-body">
+						</div>
+					</div>
+				</div>
+			</div>
+
       
     </body>
 </html>
