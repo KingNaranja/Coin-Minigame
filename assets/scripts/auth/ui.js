@@ -33,7 +33,7 @@ const signInSuccess = data => {
   showToast('signin-pass', 'ui')
 
   // toggle view for online users
-  $('#game-container').toggle()
+  $('#game-container').toggle('fast')
   // $('#sign-up').toggle()
   // $('#sign-in').toggle()
   
@@ -71,6 +71,9 @@ const signOutSuccess = () => {
 
   // close user-auth modal
   $('#user-modal').modal('hide')
+
+  // removes game container from view 
+  $('#game-container').toggle('fast')
 
   // removes user data from the local store
   store.user = ''
