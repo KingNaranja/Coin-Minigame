@@ -1,9 +1,10 @@
 const store = require('../store')
 const ui = require('./ui')
+const config = require('../config')
 
 // send a post request to create a game 
 const createGame = score => {
-  fetch('http://localhost:4741/games',{
+  fetch( config.apiUrl + '/games',{
     method:"POST",
     body: JSON.stringify({
       game: {
