@@ -24,9 +24,9 @@ const uiToasts = {
   'signout-fail': new Toast('warning', 'toast-top-right', 'You couldnt signed out!')
 }
 
-const GameToasts = {
-  'creategame-pass': new Toast('success', 'toast-top-right', 'Created a game!'),
-  'creategame-fail': new Toast('warning', 'toast-top-right', 'Failed to create game!'),
+const gameToasts = {
+  'creategame-pass': new Toast('success', 'toast-top-right', 'You did it !'),
+  'creategame-fail': new Toast('warning', 'toast-top-right', 'Failed to save game!'),
 
   'allgames-pass': new Toast('info', 'toast-top-right', 'Loading all games...'),
   'allgames-fail': new Toast('warning', 'toast-top-right', 'Failed to load all games!'),
