@@ -7,9 +7,9 @@ class mainScene extends Phaser.Scene {
     // load monster game assets 
     preload() {
       console.log('mainscene is loading assets')
-      this.load.image('platform', './monster/platform.png')
-      this.load.image('player','./monster/player.png')
-      this.load.image('coin', './monster/coin.png')
+      this.load.image('platform', 'public/monster/platform.png')
+      this.load.image('player', 'public/monster/player.png')
+      this.load.image('coin', 'public/monster/coin.png')
       
     }
   
