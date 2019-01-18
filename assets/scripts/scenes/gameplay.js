@@ -2,14 +2,21 @@
 const api = require('./api')
 // const ui = require('./ui')
 
+const platformImg = 'https://raw.githubusercontent.com/KingNaranja/Coin-Minigame/master/assets/monster/platform.png'
+
+const monsterImg = 'https://raw.githubusercontent.com/KingNaranja/Coin-Minigame/master/assets/monster/player.png'
+
+const coinImg = 
+'https://raw.githubusercontent.com/KingNaranja/Coin-Minigame/master/assets/monster/coin.png'
+
 class mainScene extends Phaser.Scene {
   
     // load monster game assets 
     preload() {
       console.log('mainscene is loading assets')
-      this.load.image('platform', 'public/monster/platform.png')
-      this.load.image('player', 'public/monster/player.png')
-      this.load.image('coin', 'public/monster/coin.png')
+      this.load.image('platform', platformImg)
+      this.load.image('player', monsterImg)
+      this.load.image('coin', coinImg)
       
     }
   
