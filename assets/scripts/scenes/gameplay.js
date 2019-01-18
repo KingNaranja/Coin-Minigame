@@ -1,4 +1,6 @@
 // game file 
+const api = require('./api')
+// const ui = require('./ui')
 
 class mainScene extends Phaser.Scene {
   
@@ -53,7 +55,7 @@ class mainScene extends Phaser.Scene {
       
       // initialize the current state of the game timer
       // 50 seconds
-      this.timer = 5000
+      this.timer = 500
       
       
       // create a game timer for this scene's player 
@@ -130,19 +132,28 @@ class mainScene extends Phaser.Scene {
     
   
   updateTimer() {
-    if ( this.timer !== 0 ) {
+    if ( this.timer > 0 ) {
       // decrement the timer 
       this.timer--
       let gameTime = Math.round(this.timer / 100)
       this.timeText.setText(gameTime)
-    }else {
-      
+
+    }else if (this.timer == 0){
       this.gameOver()
+      this.timer = null
+  
     }
   }
 
   gameOver() {
-    // console.log('this works!')
+    //record the game
+    api.createGame(this.score)
+    
+    // remove the game player and coin
+    this.player.destroy()
+    this.coin.destroy()
+       
+
   }
 }
 
