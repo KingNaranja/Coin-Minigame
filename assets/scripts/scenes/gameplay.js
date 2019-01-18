@@ -15,7 +15,6 @@ class mainScene extends Phaser.Scene {
     // initialize the scene
     create() {
 
-      this.startTime = Date.now()
       // set world gravity 
       this.physics.world.gravity.y = 50
       
