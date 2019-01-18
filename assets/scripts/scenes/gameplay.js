@@ -55,7 +55,7 @@ class mainScene extends Phaser.Scene {
       
       // initialize the current state of the game timer
       // 50 seconds
-      this.timer = 500
+      this.timer = 2000
       
       
       // create a game timer for this scene's player 
