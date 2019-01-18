@@ -14,6 +14,8 @@ class mainScene extends Phaser.Scene {
   
     // initialize the scene
     create() {
+
+      this.startTime = Date.now()
       // set world gravity 
       this.physics.world.gravity.y = 50
       
@@ -49,13 +51,25 @@ class mainScene extends Phaser.Scene {
       // can not fall through ground platform 
       this.physics.world.bounds.height =  350 // game world height == 400
       
+      
+      // initialize the current state of the game timer
+      // 50 seconds
+      this.timer = 5000
+      
+      
+      // create a game timer for this scene's player 
+      this.createTimer()
 
     }
 
+    
+
     // game logic
     update() {
-      
+      // update the in-game time
+      this.updateTimer()
 
+      
       // check if player is overlapping
       // If the player is overlapping with the coin
       if (this.physics.overlap(this.player, this.coin)) {
@@ -107,7 +121,30 @@ class mainScene extends Phaser.Scene {
       })
     }
 
+    createTimer(){
+
+      this.timeText = this.add.text(580, 30, "Start",{font: '30px Arial', fill: 
+      '#FFFFFF', align: 'center'})
+      this.timeText.setOrigin(0.5, 0.5)
+
+  }
     
+  
+  updateTimer() {
+    if ( this.timer !== 0 ) {
+      // decrement the timer 
+      this.timer--
+      let gameTime = Math.round(this.timer / 100)
+      this.timeText.setText(gameTime)
+    }else {
+      
+      this.gameOver()
+    }
+  }
+
+  gameOver() {
+    // console.log('this works!')
+  }
 }
 
 
