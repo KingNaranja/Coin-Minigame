@@ -1,8 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~toastr/build/toastr.css';
 
-main {
 
+body {
+    padding: 0px;
+    button {
+        border-radius: 7px;
+    }
+}
+#userForms {
+    #show-auth-modal {
+        display: none;
+    }
 }
 
 

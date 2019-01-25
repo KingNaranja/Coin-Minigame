@@ -34,8 +34,9 @@ const signInSuccess = data => {
 
   // toggle view for online users
   $('#game-container').toggle('fast')
-  // $('#sign-up').toggle()
-  // $('#sign-in').toggle()
+  $('#sign-up').toggle('fast')
+  $('#sign-in').toggle('fast')
+  $('#show-auth-modal').toggle('fast')
   
 
   return ''
