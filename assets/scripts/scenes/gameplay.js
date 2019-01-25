@@ -1,5 +1,6 @@
 // game file 
 const api = require('./api')
+const store = require('../store')
 // const ui = require('./ui')
 
 const platformImg = 'https://raw.githubusercontent.com/KingNaranja/Coin-Minigame/master/assets/monster/platform.png'
@@ -61,8 +62,8 @@ class mainScene extends Phaser.Scene {
       
       
       // initialize the current state of the game timer
-      // 50 seconds
-      this.timer = 50000
+      // timer is gameTime ** 100 
+      this.timer = 5000
       
       
       // create a game timer for this scene's player 
@@ -109,7 +110,7 @@ class mainScene extends Phaser.Scene {
     hit() {
 
       // randomly change the position of x and y
-      this.coin.x = Phaser.Math.Between(100,600)
+      this.coin.x = Phaser.Math.Between(100,500)
       this.coin.y = Phaser.Math.Between(100,300)
   
       // increment the game score
@@ -131,7 +132,7 @@ class mainScene extends Phaser.Scene {
 
     createTimer(){
 
-      this.timeText = this.add.text(580, 30, "Start",{font: '30px Arial', fill: 
+      this.timeText = this.add.text(460, 30, "Start",{font: '30px Arial', fill: 
       '#FFFFFF', align: 'center'})
       this.timeText.setOrigin(0.5, 0.5)
 
@@ -154,7 +155,11 @@ class mainScene extends Phaser.Scene {
 
   gameOver() {
     //record the game
-    api.createGame(this.score)
+    api.createGame(this.score) // records game
+    // if user set a high score record the high score 
+    if (this.score > store.user.totalScore) {
+      api.updateScore(this.score)
+    }
     
     // remove the game player and coin
     this.player.destroy()

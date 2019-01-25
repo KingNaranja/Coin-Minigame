@@ -24,8 +24,31 @@ const createGame = score => {
 
 }
 
+// updates the players total score for the leaderboard
+const updateScore = (score) => {
+  console.log(store.user)
+  fetch( config.apiUrl + '/users/' + store.user._id,{
+    method:"PATCH",
+    body: JSON.stringify({
+      user: {
+        totalScore:score
+      }
+    }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+      "Authorization": `Token token=${store.user.token}`
+
+    }
+  
+  })
+  
+}
 
 
 
 
-module.exports = {createGame}
+
+module.exports = {
+  createGame,
+  updateScore
+}
