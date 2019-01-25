@@ -1,4 +1,4 @@
-# [Coin Minigame](https://github.com/KingNaranja/Coin-Minigame/) -- The Newest Social Media App
+# [Coin Minigame](https://github.com/KingNaranja/Coin-Minigame/) -- Compete for the Highscore!
 
 # [Minigame-Api](https://github.com/KingNaranja/Minigame-Api)
 
