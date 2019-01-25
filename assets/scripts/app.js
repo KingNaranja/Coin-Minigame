@@ -11,7 +11,7 @@ $(() => {
   // initialize phaser game 
   const config = {
     type: Phaser.auto,
-    width: 700,
+    width: 500,
     height: 400,
     backgroundColor: '#3498db',
     parent: 'game',
