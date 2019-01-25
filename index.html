@@ -14,54 +14,62 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      
+			
+			<!-- User Auth Form Events  -->
+			<div id="userForms">
+
+					<!-- sign-up -->
+					<form id="sign-up">
+						<fieldset>
+							<legend>Sign Up to Play !</legend>
+							<input type="text" name="credentials[email]" placeholder="Email">
+							<input type="text" name="nickname" placeholder="Nickname (required)">
+							<input type="password" name="credentials[password]" placeholder="Password">
+							<input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+							<input type="submit" value="Sign-Up">
+
+						</fieldset>
+					</form>
+
+					<!-- sign-in -->
+					<form id="sign-in">
+							<fieldset>
+								<legend>Login !</legend>
+								<input type="text" name="credentials[email]" placeholder="Email">
+								<input type="password" name="credentials[password]" placeholder="Password">
+								<input type="submit" value="Sign-In">
+							</fieldset>
+						</form>
+						<button type ='button' id="show-auth-modal">Change Password/Logout</button>
+
+			</div>
+
+
       <main>
 
-        <!-- User Auth Form Events  -->
-        <div id="userForms">
-
-            <!-- sign-up -->
-            <form id="sign-up">
-              <fieldset>
-                <legend>Sign Up to Play !</legend>
-                <input type="text" name="credentials[email]" placeholder="Email">
-                <input type="text" name="nickname" placeholder="Nickname (required)">
-                <input type="password" name="credentials[password]" placeholder="Password">
-                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-                <input type="submit" value="Sign-Up">
-  
-              </fieldset>
-            </form>
-  
-            <!-- sign-in -->
-            <form id="sign-in">
-                <fieldset>
-                  <legend>Login !</legend>
-                  <input type="text" name="credentials[email]" placeholder="Email">
-                  <input type="password" name="credentials[password]" placeholder="Password">
-                  <input type="submit" value="Sign-In">
-                </fieldset>
-              </form>
-              <button type ='button' id="show-auth-modal">Change Password/Logout</button>
-
-        </div>
-
-				<div id="game-container">
-						<div id='game'></div>
-						<h3>Use the Arrow Keys to Move. Collect the Coins !</h3>
+        
+				<div id="game-container" >
+					<div id="wrapper">
+						<div class="left" id='game'>
+								<h3>Use the Arrow Keys to Move. Collect the Coins !</h3>
+							</div>
+							<div class="right" id="games-feed">
+								<h2>My Games</h2>
+								<!-- handlebars template -->
+								<div id="myGames"></div>
+							</div>
+					</div>
+						
 				</div>
-					
-				<div id="leaderboard-container">
+				
+			
+				<div class="col" id="leaderboard-container">
 					<h2>Leaderboard</h2>
 					<!-- handlebars template -->
 					<div id="leaderboard"></div>
 				</div>
 
-				<div id="games-feed">
-					<h2>My Games</h2>
-					<!-- handlebars template -->
-					<div id="myGames"></div>
-				</div>
+				
 
       </main>
 

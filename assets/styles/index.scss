@@ -1,15 +1,30 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~toastr/build/toastr.css';
 
+main {
+
+}
+
+
 #game-container {
+    text-align: center;
     display: none;
+    #wrapper {
+        display: flex;
+        .left {
+            flex: 0 0 65%;
+        }
+        .right {
+        flex: 1;
+        }
+    }
+    
 }
 
 #leaderboard-container{
     text-align: center;
     #leaderboard {
-        display: flex;
-        flex-direction: column;
+
         section {
             display: flex;
             flex-direction: row;
@@ -17,3 +32,4 @@
         }
     }
 }
+
