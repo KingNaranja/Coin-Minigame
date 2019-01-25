@@ -2,6 +2,7 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api')
 const ui = require('./ui')
 const leaderboard = require('../leaderboard/leaderboard-events')
+const games = require('../games/game-events')
 
 
 
@@ -56,7 +57,8 @@ const onSignIn = event => {
       .then(ui.signInSuccess)
       // after successful ui response, then triggers gets all games function in game/game-event
     //   .then(posts.onGetAllGames)
-      .then(leaderboard.onGetLeaderboard)  
+      .then(leaderboard.onGetLeaderboard)
+      .then(games.onGetMyGames)  
       .catch(ui.signInFailure)
   }
   
