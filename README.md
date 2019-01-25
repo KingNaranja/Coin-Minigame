@@ -57,3 +57,11 @@ creating documentation:
  ## Problem Solving
 In order to reach my initial scope for thi project I relied heavily on official documentation to research similar issues and their solutions.
 Using *Phaser 3* led to issues finding up-to-date documentation as the framework recently upgraded from *Phaser 2*.
+
+## Future
+In development:
+- more than one coin 
+- enemy projectiles 
+- in game buttons 
+
+In the future I also plan to implement additional game scenes using Phaser's built-in scene manager. The leaderboard will then track the user's high score throughout all game levels.
