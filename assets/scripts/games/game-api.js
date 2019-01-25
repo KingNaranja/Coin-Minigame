@@ -15,7 +15,25 @@ const getMyGames = () => {
        
 }
 
+const deleteGame = (id) => {
+    // use the gameID to make a DELETE request
+    return fetch( config.apiUrl + '/games/' + id,{
+        method:"DELETE",
+        headers: {
+          "Authorization": `Token token=${store.user.token}`
+    
+        }
+      
+      })
+    //   .then(response =>{return response.json()})
+    
+        // fetch does not easily allow a null response to be
+        //  parsed into JSON
+        
+}
+
 
 module.exports = {
-    getMyGames
+    getMyGames,
+    deleteGame
 }

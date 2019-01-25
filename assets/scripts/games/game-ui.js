@@ -15,7 +15,19 @@ const getMyGamesFailure = data => {
     
 }
 
+
+const deleteGameSuccess = () => {
+    showToast('game', 'deletegame-pass')
+}
+
+const deleteGameFailure = () => {
+    console.log('cant delete your game !')
+    showToast('game', 'deletegame-fail')
+    
+}
 module.exports = {
     getMyGamesFailure,
-    getMyGamesSuccess
+    getMyGamesSuccess,
+    deleteGameSuccess,
+    deleteGameFailure
 }
