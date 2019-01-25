@@ -4,3 +4,16 @@
 #game-container {
     display: none;
 }
+
+#leaderboard-container{
+    text-align: center;
+    #leaderboard {
+        display: flex;
+        flex-direction: column;
+        section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+    }
+}

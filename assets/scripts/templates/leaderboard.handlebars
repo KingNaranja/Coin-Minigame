@@ -6,15 +6,10 @@ we will use the HTML template below to create each leaderboard entry in the DOM 
 
 {{#each players as |player|}}
   <section data-id={{player._id}} class="player">
-    <div class="player-header">
-      <h3>{{player.nickname}}</h3>
-    </div>
-    <div class="player-body">
-      <p>{{limit player.createdAt 10}}</p>
-      <h5>{{player.totalScore}}</h5>
-    </div>
-    <div>
-    </div>
+    <h3 class="player-name">{{player.nickname}}</h3>
+    <p class="player-scoreDate">{{limit player.createdAt 10}}</p>
+    <h5 class="player-score">{{player.totalScore}}</h5>
+   
   </section>
 
 {{/each}}
