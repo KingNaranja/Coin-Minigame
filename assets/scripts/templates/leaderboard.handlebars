@@ -1,0 +1,20 @@
+<!-- takes  the JSON object that is requested from the api -->
+<!-- player is the current iteration of the api data object -->
+<!-- For each player with the api data,
+we will use the HTML template below to create each leaderboard entry in the DOM -->
+
+
+{{#each players as |player|}}
+  <section data-id={{player._id}} class="player">
+    <div class="player-header">
+      <h3>{{player.nickname}}</h3>
+    </div>
+    <div class="player-body">
+      <p>{{limit player.createdAt 10}}</p>
+      <h5>{{player.totalScore}}</h5>
+    </div>
+    <div>
+    </div>
+  </section>
+
+{{/each}}
