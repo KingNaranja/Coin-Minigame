@@ -1,8 +1,22 @@
 {{!-- game is the current iteration of the games collection from the api --}}
+{{!-- if no games exist, then a message will prompt instead --}}
+
+{{#if games}}
+
 {{#each games as |game|}}
-  <section data-id={{game._id}} class="game">
-    <h3 class="player-name">{{game.owner.nickname}}</h3>
-    <p class="game-scoreDate">{{limit game.createdAt 10}}</p>
-    <h5 class="game-score">{{game.score}}</h5>
+  <section data-id={{game._id}} class="game-entry">
+    <div class="game-info">
+      <h5 class="game-scoreDate">{{limit game.createdAt 10}}</h5>
+      <h5 class="game-score">{{game.score}}</h5>
+    </div>
+    <div class="game-forms">
+      <button class='delete-game'>Delete</button>
+    </div>
+    
   </section>
 {{/each}}
+
+{{else }}
+  <div>You've never completed a game!</div>
+
+{{/if}}
