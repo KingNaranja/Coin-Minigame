@@ -78,9 +78,11 @@ const signOutSuccess = () => {
 
   // removes user data from the local store
   store.user = ''
+
   // bring user back to initial view 
   $('#sign-up').toggle('fast')
   $('#sign-in').toggle('fast')
+  $('#show-auth-modal').toggle('fast')
 }
 
 const signOutFailure = () => {

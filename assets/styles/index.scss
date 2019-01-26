@@ -2,13 +2,21 @@
 @import '~toastr/build/toastr.css';
 
 
+
 body {
     padding: 0px;
-    button {
-        border-radius: 7px;
+    input, button{
+        margin: 5px;
+        text-align: center;
+        border-color: lightblue;
+        padding: 5px;
+        border-radius: 6px;
     }
+
 }
 #userForms {
+    display: flex;
+    justify-content: center;
     #show-auth-modal {
         display: none;
     }
@@ -31,6 +39,7 @@ body {
 }
 
 #leaderboard-container{
+    margin: 2rem;
     text-align: center;
     #leaderboard {
 
