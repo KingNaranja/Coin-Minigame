@@ -23,7 +23,7 @@ class menu extends Phaser.Scene {
     logo.scaleY = .5
 
     let playButton = this.playButton
-    playButton = this.add.text(180,250, 'Play', { fontFamily: "Montserrat", fontSize: 74, color: "#E4FDE1" })
+    playButton = this.add.text(165,250, 'Play', { fontFamily: "Montserrat", fontSize: 74, color: "#E4FDE1" })
     // make text interactive with user
     // and emit events 
     playButton.setInteractive()
