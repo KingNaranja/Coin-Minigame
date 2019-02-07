@@ -1,7 +1,10 @@
 'use strict'
 
 const authEvents = require('./auth/events')
+import {menu} from './scenes/main-menu'
 import {mainScene} from './scenes/gameplay'
+
+import myGame from './store'
 
 
 $(() => {
@@ -15,7 +18,7 @@ $(() => {
     height: 400,
     backgroundColor: '#3498db',
     parent: 'game',
-    scene:mainScene,
+    scene: myGame.scenes,
     physics: {default: 'arcade'}
     
   }

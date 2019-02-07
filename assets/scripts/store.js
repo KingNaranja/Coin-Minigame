@@ -1,5 +1,8 @@
 'use strict'
 
-const scenes = {}
+const myGame = {
+    // define our game state
+    scenes : []
+}
 
-module.exports = scenes
+module.exports = myGame
