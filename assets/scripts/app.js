@@ -4,7 +4,7 @@ const authEvents = require('./auth/events')
 import {menu} from './scenes/main-menu'
 import {mainScene} from './scenes/gameplay'
 
-import myGame from './store'
+const myGame = require('./store')
 
 
 $(() => {
