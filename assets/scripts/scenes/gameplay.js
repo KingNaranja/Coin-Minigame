@@ -1,6 +1,6 @@
 // game file 
 const api = require('./api')
-const store = require('../store')
+const myGame = require('../store')
 // const ui = require('./ui')
 
 const platformImg = 'https://raw.githubusercontent.com/KingNaranja/Coin-Minigame/master/assets/monster/platform.png'
@@ -11,10 +11,12 @@ const coinImg =
 'https://raw.githubusercontent.com/KingNaranja/Coin-Minigame/master/assets/monster/coin.png'
 
 class mainScene extends Phaser.Scene {
+    constructor(){
+      super({key:"GamePlay"})
+    }
   
     // load monster game assets 
     preload() {
-      console.log('mainscene is loading assets')
       this.load.image('platform', platformImg)
       this.load.image('player', monsterImg)
       this.load.image('coin', coinImg)
@@ -63,7 +65,7 @@ class mainScene extends Phaser.Scene {
       
       // initialize the current state of the game timer
       // timer is gameTime ** 100 
-      this.timer = 5000
+      this.timer = 2000
       
       
       // create a game timer for this scene's player 
@@ -157,7 +159,7 @@ class mainScene extends Phaser.Scene {
     //record the game
     api.createGame(this.score) // records game
     // if user set a high score record the high score 
-    if (this.score > store.user.totalScore) {
+    if (this.score > myGame.user.totalScore) {
       api.updateScore(this.score)
     }
     
@@ -169,5 +171,6 @@ class mainScene extends Phaser.Scene {
   }
 }
 
+myGame.scenes.push(mainScene)
 
 module.exports = { mainScene }
