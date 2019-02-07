@@ -166,7 +166,12 @@ class mainScene extends Phaser.Scene {
     // remove the game player and coin
     this.player.destroy()
     this.coin.destroy()
-       
+    let restartGame = this.restartGame
+    // add user interactive text
+    restartGame = this.add.text(120,250, 'play again?', { fontFamily: "Montserrat", fontSize: 30, color: "#E4FDE1" })
+    // restart gameplay scene on click/touch
+    restartGame.setInteractive()
+    restartGame.on('pointerdown', () => {this.scene.restart()})
 
   }
 }
