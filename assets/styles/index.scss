@@ -3,7 +3,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 
-body {
+body  {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
     padding: 0px;
     input, button{
         margin: 5px;
@@ -50,4 +52,53 @@ body {
         }
     }
 }
+header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    .logo {
+        max-width: 100%;
+        max-height: auto;
+    }
+    ul {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        li{
+            flex: 1;
+            &:hover{
+                color:lightcoral;
+                font-size: 1.2rem;
+            }
+        }
+        .home {
+            flex: 0 1 10%;
+        }
+        #show-auth-modal {
+            display: none;
+        }
 
+        
+    }
+}
+
+@media all and (max-width:600px) {
+    body{
+        background-color: beige;
+    }
+    header {
+        flex-direction: column;
+        ul {
+            flex-wrap: wrap;
+            li {
+                flex-basis: 50%;
+            }
+            .home{
+                flex: 0 1 50%;
+            }
+
+        }
+        
+    }
+
+}
