@@ -12,6 +12,10 @@ const signUpSuccess = () => {
 
   // showToast takes two arguments, (action, event)
   showToast('signup-pass', 'ui')
+  // hide modal
+  $('#signup-modal').modal('hide')
+  
+
 }
 
 const signUpFailure = () => {
@@ -34,9 +38,18 @@ const signInSuccess = data => {
 
   // toggle view for online users
   $('#game-container').toggle('fast')
-  $('#sign-up').toggle('fast')
-  $('#sign-in').toggle('fast')
   $('#show-auth-modal').toggle('fast')
+  // hide modal
+  $('#signin-modal').modal('hide')
+
+  // Remove auth menu items 
+  $('#demo').toggle('fast')
+  $('#show-signin-modal').toggle()
+  $('#show-signup-modal').toggle()
+
+
+
+  
   
 
   return ''
@@ -80,8 +93,9 @@ const signOutSuccess = () => {
   store.user = ''
 
   // bring user back to initial view 
-  $('#sign-up').toggle('fast')
-  $('#sign-in').toggle('fast')
+  $('#demo').toggle('fast')
+  $('#show-signin-modal').toggle()
+  $('#show-signup-modal').toggle()
   $('#show-auth-modal').toggle('fast')
 }
 

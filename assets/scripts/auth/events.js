@@ -16,6 +16,12 @@ const addEvents = function() {
     $('#show-auth-modal').on('click', () => {
         $('#user-modal').modal('show')
     })
+    $('#show-signup-modal').on('click', () => {
+        $('#signup-modal').modal('show')
+    })
+    $('#show-signin-modal').on('click', () => {
+        $('#signin-modal').modal('show')
+    })
 
     // displays the change password form
     $('#launch-change-password').on('click', () => {
