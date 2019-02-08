@@ -5,7 +5,7 @@ import {menu} from './scenes/main-menu'
 import {mainScene} from './scenes/gameplay'
 
 const myGame = require('./store')
-
+const leaderboard = require('./leaderboard/leaderboard-events')
 
 $(() => {
   
@@ -26,7 +26,8 @@ $(() => {
 
   // adds user auth event handlers 
   authEvents.addEvents()
-  
+  // get current leaderboard rankings 
+  leaderboard.onGetLeaderboard()
   
 
 })

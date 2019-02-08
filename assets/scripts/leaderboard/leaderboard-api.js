@@ -3,12 +3,7 @@ const store = require('../store')
 
 const getLeaderboard = () => {
     return fetch( config.apiUrl + '/leaderboard',{
-        method:"GET",
-        headers: {
-          "Authorization": `Token token=${store.user.token}`
-    
-        }
-      
+        method:"GET"
       })
         .then(response =>{return response.json()})
         

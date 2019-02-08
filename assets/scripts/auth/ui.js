@@ -1,9 +1,8 @@
 const store = require('../store')
-
 const showToast = require('../toastr')
-
 // showToast requires ui action as param to display
 // feedback to the user
+
 
 // creates ui response showing successful sign up
 const signUpSuccess = () => {
@@ -46,11 +45,6 @@ const signInSuccess = data => {
   $('#demo').toggle('fast')
   $('#show-signin-modal').toggle()
   $('#show-signup-modal').toggle()
-
-
-
-  
-  
 
   return ''
 }

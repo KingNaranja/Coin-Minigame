@@ -4,7 +4,7 @@ const ui = require('./leaderboard-ui')
 
 
 
-const onGetLeaderboard = () =>{
+const onGetLeaderboard = () => {
   if (event) { event.preventDefault() }
   // send a fetch request to the leaderboard 
   api.getLeaderboard()
