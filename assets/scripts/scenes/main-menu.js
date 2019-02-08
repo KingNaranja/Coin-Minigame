@@ -1,10 +1,9 @@
 const myGame = require('../store')
 // const mainScene = require('../scenes/gameplay')
 
-// const logoImg = 
-// 'https://raw.githubusercontent.com/KingNaranja/Coin-Minigame/master/assets/monster/logo.png'
+const logoImg = 
+'https://raw.githubusercontent.com/KingNaranja/Coin-Minigame/master/assets/monster/logo.png'
 
-const logoImg = require('../../monster/logo.png')
 
 class menu extends Phaser.Scene {
   constructor(){
