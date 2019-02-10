@@ -103,6 +103,9 @@ header {
     min-height: calc(100vh - 50px);
 }
 .footer {
+    a{
+        text-decoration: none;
+    }
     font-size: 50%;
     height: 50px;
     margin-top: -30px;
