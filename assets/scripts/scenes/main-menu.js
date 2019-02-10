@@ -41,12 +41,6 @@ class Menu extends Phaser.Scene {
 
   demo(){
 
-    // check if user is currently online
-    // let nextScene
-    // if (store.user) {
-    //   nextScene = 'GamePlay'
-    // } 
-
     console.log('the store is', store)
     // if user is not online 
     if (store.user) {

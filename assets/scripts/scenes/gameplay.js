@@ -1,6 +1,6 @@
 // game file 
 const api = require('./api')
-const myGame = require('../store')
+const store = require('../store')
 // const ui = require('./ui')
 
 const platformImg = 'https://raw.githubusercontent.com/KingNaranja/Coin-Minigame/master/assets/monster/platform.png'
@@ -13,8 +13,8 @@ const coinImg =
 class mainScene extends Phaser.Scene {
     constructor(){
       super({key:"GamePlay"})
+      
     }
-  
     // load monster game assets 
     preload() {
       this.load.image('platform', platformImg)
@@ -49,8 +49,10 @@ class mainScene extends Phaser.Scene {
       this.coin.body.moves = false
       
       
+      this.score = 0 // the game score is stored in a variable
       
-      this.score = 0 // the game score is stored in a variable 
+
+      
       let style = { font: '20px Arial', fill: '#fff' };
       // use style to display score in the top left corner
       this.scoreText = this.add.text(20, 20, 'score: ' + this.score, style)
@@ -65,7 +67,7 @@ class mainScene extends Phaser.Scene {
       
       // initialize the current state of the game timer
       // timer is gameTime ** 100 
-      this.timer = 2000
+      this.timer = 2500
       
       
       // create a game timer for this scene's player 
@@ -116,7 +118,7 @@ class mainScene extends Phaser.Scene {
       this.coin.y = Phaser.Math.Between(100,300)
   
       // increment the game score
-      this.score += 10
+      if (store.user){this.score += 10}
   
       // display the updated score on the screen
       this.scoreText.setText('score: ' + this.score)
@@ -156,17 +158,19 @@ class mainScene extends Phaser.Scene {
   }
 
   gameOver() {
-    //record the game
-    api.createGame(this.score) // records game
-    // if user set a high score record the high score 
-    if (this.score > myGame.user.totalScore) {
-      api.updateScore(this.score)
-    }
     
     // remove the game player and coin
     this.player.destroy()
     this.coin.destroy()
     let restartGame = this.restartGame
+
+    //record the game
+    api.createGame(this.score) // records game
+    // if user set a high score record the high score 
+    if (this.score > store.user.totalScore) {
+      api.updateScore(this.score)
+    }
+    
     // add user interactive text
     restartGame = this.add.text(120,250, 'play again?', { fontFamily: "Montserrat", fontSize: 30, color: "#E4FDE1" })
     // restart gameplay scene on click/touch
@@ -176,6 +180,6 @@ class mainScene extends Phaser.Scene {
   }
 }
 
-myGame.scenes.push(mainScene)
+store.myGame.scenes.push(mainScene)
 
 module.exports = { mainScene }
