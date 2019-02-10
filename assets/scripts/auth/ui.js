@@ -13,7 +13,7 @@ const signUpSuccess = () => {
   showToast('signup-pass', 'ui')
   // hide modal
   $('#signup-modal').modal('hide')
-  
+  $('#game').removeClass('demo')
 
 }
 
@@ -36,7 +36,9 @@ const signInSuccess = data => {
   showToast('signin-pass', 'ui')
 
   // toggle view for online users
-  $('#game-container').toggle('fast')
+  if ( $('#game').is(':hidden') ) {
+    $('#game-container').toggle('fast')
+  }
   $('#show-auth-modal').toggle('fast')
   // hide modal
   $('#signin-modal').modal('hide')
@@ -45,6 +47,13 @@ const signInSuccess = data => {
   $('#demo').toggle('fast')
   $('#show-signin-modal').toggle()
   $('#show-signup-modal').toggle()
+
+
+  // if demo is currently running 
+  if ( $('#game').hasClass('demo') ) {
+		showToast('demo-game', 'game')
+	}
+
 
   return ''
 }
