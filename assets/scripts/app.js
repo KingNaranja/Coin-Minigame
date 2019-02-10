@@ -1,33 +1,31 @@
 'use strict'
 
 const authEvents = require('./auth/events')
-import {menu} from './scenes/main-menu'
+
+// import game scenes  
+import {Menu} from './scenes/main-menu'
+import {Demo} from './scenes/demo'
 import {mainScene} from './scenes/gameplay'
 
-const myGame = require('./store')
+
+const store = require('./store')
 const leaderboard = require('./leaderboard/leaderboard-events')
+const gameEvents = require('./games/game-events')
 
 $(() => {
   
   
-
-  // initialize phaser game 
-  const config = {
-    type: Phaser.auto,
-    width: 500,
-    height: 400,
-    backgroundColor: '#3498db',
-    parent: 'game',
-    scene: myGame.scenes,
-    physics: {default: 'arcade'}
-    
-  }
-  const game = new Phaser.Game(config)
+  const game = new Phaser.Game(store.config)
 
   // adds user auth event handlers 
   authEvents.addEvents()
   // get current leaderboard rankings 
   leaderboard.onGetLeaderboard()
+
+
+  // if user is a guest 
+  $('#demo').on('click', gameEvents.onDemoGame)
+  
   
 
 })

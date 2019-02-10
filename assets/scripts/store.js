@@ -2,7 +2,23 @@
 
 const myGame = {
     // define our game state
-    scenes : []
+    scenes : [],
+    
 }
 
-module.exports = myGame
+// initialize phaser game 
+const config = {
+    type: Phaser.auto,
+    width: 500,
+    height: 400,
+    backgroundColor: '#3498db',
+    parent: 'game',
+    scene: myGame.scenes,
+    physics: {default: 'arcade'}
+    
+  }
+
+module.exports = {
+    myGame,
+    config
+}
