@@ -2,6 +2,8 @@
 @import '~toastr/build/toastr.css';
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 $wallpaper: url('../monster/evening.png');
+$primary: #f08080;
+$secondary: #add8e6;
 
 body  {
     background: url('https://raw.githubusercontent.com/KingNaranja/Coin-Minigame/master/assets/monster/evening.jpg') transparent;
@@ -12,20 +14,12 @@ body  {
         color: black;
         margin: 5px;
         text-align: center;
-        border-color: lightblue;
+        border-color: $secondary;
         padding: 5px;
         border-radius: 6px;
     }
 
 }
-#userForms {
-    display: flex;
-    justify-content: center;
-    #show-auth-modal {
-        display: none;
-    }
-}
-
 
 #game-container {
     text-align: center;
@@ -69,7 +63,7 @@ header {
         li{
             flex: 1;
             &:hover{
-                color:lightcoral;
+                color:$primary;
                 font-size: 1.2rem;
             }
         }
@@ -112,4 +106,8 @@ header {
     font-size: 50%;
     height: 50px;
     margin-top: -30px;
+}
+
+.demo, #demo {
+    color: $primary;
 }
