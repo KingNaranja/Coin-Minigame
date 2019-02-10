@@ -39,6 +39,7 @@ const gameToasts = {
 
   'allmygames-pass': new Toast('info', 'toast-top-right', 'Loading all of your games...'),
   'allmygames-fail': new Toast('warning', 'toast-top-right', 'Failed to load your games!'),
+  'demo-game': new Toast('info', 'toast-top-right', 'Please wait for demo to complete...')
 
 //   'mylatestgame-success': new Toast('success', 'toast-top-right', 'you did it'),
 //   'mylatestgame-fail': new Toast('warning', 'toast-top-right', 'Failed to load your latest game')
