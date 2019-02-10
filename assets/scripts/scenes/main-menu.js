@@ -1,11 +1,11 @@
-const myGame = require('../store')
+const store = require('../store')
 // const mainScene = require('../scenes/gameplay')
 
 const logoImg = 
 'https://raw.githubusercontent.com/KingNaranja/Coin-Minigame/master/assets/monster/logo.png'
 
 
-class menu extends Phaser.Scene {
+class Menu extends Phaser.Scene {
   constructor(){
     super({key:"MainMenu"}) // unique identifier for Phaser scenes 
   }
@@ -22,21 +22,45 @@ class menu extends Phaser.Scene {
     logo.scaleY = .5
 
     let playButton = this.playButton
-    playButton = this.add.text(165,250, 'Play', { fontFamily: "Montserrat", fontSize: 74, color: "#E4FDE1" })
+    playButton = this.add.text(200,250, 'PLAY', { fontFamily: "Montserrat", fontSize: 40, color: "#E4FDE1" })
     // make text interactive with user
-    // and emit events 
+    // and emit events when the game object is touched or clicked
     playButton.setInteractive()
-    // when the game object is touched or clicked
+    
+    
     // start the gameplay scene 
-    playButton.on('pointerdown', () => { this.scene.start('GamePlay')})
+    playButton.on('pointerdown', ()=>{
+      this.demo()
+    })
     
   }
 
   update() {
 
   }
+
+  demo(){
+
+    // check if user is currently online
+    // let nextScene
+    // if (store.user) {
+    //   nextScene = 'GamePlay'
+    // } 
+
+    console.log('the store is', store)
+    // if user is not online 
+    if (store.user) {
+      // console.log(scene)
+      console.log('scene is demo')
+      this.scene.start('GamePlay')
+    } else {
+      // console.log(scene)
+      console.log('scene is gameplay')
+      this.scene.start('Demo' )
+    }
+  }
 }
 // add scene to list of scenes 
-myGame.scenes.push(menu)
+store.myGame.scenes.push(Menu)
 
-module.exports = {menu}
+module.exports = {Menu}
