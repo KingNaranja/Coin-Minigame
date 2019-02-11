@@ -1,6 +1,8 @@
 const store = require('../store')
 const ui = require('./ui')
 const config = require('../config')
+const leaderboard = require('../leaderboard/leaderboard-events')
+
 
 // send a post request to create a game 
 const createGame = score => {
@@ -26,7 +28,6 @@ const createGame = score => {
 
 // updates the players total score for the leaderboard
 const updateScore = (score) => {
-  console.log(store.user)
   fetch( config.apiUrl + '/users/' + store.user._id,{
     method:"PATCH",
     body: JSON.stringify({
@@ -41,7 +42,8 @@ const updateScore = (score) => {
     }
   
   })
-  
+  .then(response =>{return response.json()})
+  .then(leaderboard.onGetLeaderboard)
 }
 
 

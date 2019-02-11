@@ -2,7 +2,6 @@
 const leaderboardTemplate = require('../templates/leaderboard.handlebars')
 
 const getLeaderboardSuccess = data => {
-    console.log('the api data is', data)
     // pass api data into handlebars template 
     const leaderboardEntries = leaderboardTemplate({ players: data.players })
     // append formatted template to the DOM

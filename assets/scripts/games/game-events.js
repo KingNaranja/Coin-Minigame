@@ -5,7 +5,7 @@ const store = require('../store')
 
 
 const addGameHandlers = function() {
-	console.log('this is working')
+	console.log('game handlers are working')
 	$('.delete-game').on('click', onDeleteGame)	
 	
 

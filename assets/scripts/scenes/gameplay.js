@@ -2,6 +2,9 @@
 const api = require('./api')
 const store = require('../store')
 // const ui = require('./ui')
+const gameEvents = require('../games/game-events')
+
+
 
 const platformImg = 'https://raw.githubusercontent.com/KingNaranja/Coin-Minigame/master/assets/monster/platform.png'
 
@@ -10,7 +13,7 @@ const monsterImg = 'https://raw.githubusercontent.com/KingNaranja/Coin-Minigame/
 const coinImg = 
 'https://raw.githubusercontent.com/KingNaranja/Coin-Minigame/master/assets/monster/coin.png'
 
-class mainScene extends Phaser.Scene {
+class MainScene extends Phaser.Scene {
     constructor(){
       super({key:"GamePlay"})
       
@@ -169,7 +172,11 @@ class mainScene extends Phaser.Scene {
     // if user set a high score record the high score 
     if (this.score > store.user.totalScore) {
       api.updateScore(this.score)
+      
     }
+
+    // get your newest game and high score
+    gameEvents.onGetMyGames()
     
     // add user interactive text
     restartGame = this.add.text(120,250, 'play again?', { fontFamily: "Montserrat", fontSize: 30, color: "#E4FDE1" })
@@ -180,6 +187,6 @@ class mainScene extends Phaser.Scene {
   }
 }
 
-store.myGame.scenes.push(mainScene)
+store.myGame.scenes.push(MainScene)
 
-module.exports = { mainScene }
+module.exports = { MainScene }

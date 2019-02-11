@@ -5,7 +5,7 @@ const authEvents = require('./auth/events')
 // import game scenes  
 import {Menu} from './scenes/main-menu'
 import {Demo} from './scenes/demo'
-import {mainScene} from './scenes/gameplay'
+import {MainScene} from './scenes/gameplay'
 
 
 const store = require('./store')
