@@ -66,6 +66,19 @@ class Demo extends Phaser.Scene {
       // assign arrow key inputs 
       this.arrow = this.input.keyboard.createCursorKeys();
       
+      // add mobile device controls if needed
+      // player becomes draggable
+      if (store.config.scale){
+        this.player.setInteractive()
+        this.input.setDraggable(this.player)
+        this.input.on('drag', function (pointer, gameObject, dragX, dragY) {
+          gameObject.x = dragX
+          gameObject.y = dragY
+
+        })
+      }
+
+
       // set game bounderies so that player 
       // can not fall through ground platform 
       this.physics.world.bounds.height =  350 // game world height == 400

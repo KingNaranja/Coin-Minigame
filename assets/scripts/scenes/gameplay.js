@@ -44,7 +44,21 @@ class MainScene extends Phaser.Scene {
       // collideWorldbounds prevents the player from falling through the floor
       this.player = this.physics.add.sprite(100,180,'player')
       this.player.body.collideWorldBounds = true 
-       
+
+
+      // add mobile device controls if needed 
+      // player becomes draggable
+      if (store.config.scale){
+        this.player.setInteractive()
+        this.input.setDraggable(this.player)
+        this.input.on('drag', function (pointer, gameObject, dragX, dragY) {
+          gameObject.x = dragX
+          gameObject.y = dragY
+
+        })
+      }
+
+      
       
       // creates a coin object
       // that is immovable  
