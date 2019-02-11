@@ -13,6 +13,10 @@ Minigame API: https://aqueous-oasis-20309.herokuapp.com/
 # What is it ?
 A single page web application that allows users to sign-up, play a simple arcade game and try to compete against the high scores of other users.
 
+
+![Coin.io demo gameplay](https://imgur.com/rLjri3I)
+
+
 ## How it works
 When a user logs in, the app fetches the leaderboard from the database as well as initializes a *Phaser* game scene. The only goal is to colect the gold coin by controlling the player with the arrow keys before running out of time. When the game time is over, the users score and highscore are sent with a PATCH request to the API. 
 
