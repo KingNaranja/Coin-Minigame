@@ -14,7 +14,11 @@ const config = {
     backgroundColor: '#3498db',
     parent: 'game',
     scene: myGame.scenes,
-    physics: {default: 'arcade'}
+    physics: {default: 'arcade'},
+    scale: {
+        mode: Phaser.Scale.FIT,
+        autoCenter: Phaser.Scale.CENTER_BOTH
+    }
     
   }
 

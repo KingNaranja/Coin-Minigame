@@ -37,7 +37,7 @@ body  {
 }
 
 #leaderboard-container{
-    margin: 2rem;
+    margin: 1rem;
     text-align: center;
     #leaderboard {
 
@@ -79,9 +79,6 @@ header {
 }
 
 @media all and (max-width:600px) {
-    body{
-        background-color: beige;
-    }
     header {
         flex-direction: column;
         ul {
@@ -95,6 +92,10 @@ header {
 
         }
         
+    }
+    #wrapper {
+        display: flex;
+        flex-direction: column;
     }
 
 }
