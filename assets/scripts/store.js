@@ -8,17 +8,14 @@ const myGame = {
 
 // initialize phaser game 
 const config = {
-    type: Phaser.auto,
+    type: Phaser.AUTO,
     width: 500,
     height: 400,
     backgroundColor: '#3498db',
     parent: 'game',
     scene: myGame.scenes,
-    physics: {default: 'arcade'},
-    scale: {
-        mode: Phaser.Scale.FIT,
-        autoCenter: Phaser.Scale.CENTER_BOTH
-    }
+    physics: {default: 'arcade'}
+    // scale: 
     
   }
 

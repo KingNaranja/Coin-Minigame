@@ -26,6 +26,7 @@ body  {
     display: none;
     #wrapper {
         display: flex;
+        margin:.1rem;
         .left {
             flex: 0 0 65%;
         }
@@ -96,6 +97,7 @@ header {
     #wrapper {
         display: flex;
         flex-direction: column;
+        margin:-1rem;
     }
 
 }
