@@ -44,6 +44,7 @@ const updateScore = (score) => {
   })
   .then(response =>{return response.json()})
   .then(leaderboard.onGetLeaderboard)
+  .then(ui.newHighScore)
 }
 
 
