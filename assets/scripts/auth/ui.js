@@ -107,6 +107,7 @@ const signOutSuccess = () => {
   $('#show-signin-modal').toggle()
   $('#show-signup-modal').toggle()
   $('#show-auth-modal').toggle('fast')
+  $('#user').toggle('fast')
 }
 
 const signOutFailure = () => {
