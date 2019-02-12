@@ -1,4 +1,4 @@
-# [Coin.io](https://github.com/KingNaranja/Coin-Minigame/) 
+# [Coin.io](https://kingnaranja.github.io/Coin-Minigame/) 
 
 # Compete for the Highscore!
 
