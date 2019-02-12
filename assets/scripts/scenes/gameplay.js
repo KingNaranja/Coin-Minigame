@@ -186,6 +186,8 @@ class MainScene extends Phaser.Scene {
     // if user set a high score record the high score 
     if (this.score > store.user.totalScore) {
       api.updateScore(this.score)
+      // update the score in the nav bar 
+      $('#high-score').text(this.score)
       
     }
 

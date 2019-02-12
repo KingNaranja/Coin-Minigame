@@ -1,4 +1,5 @@
 const showToast = require('../toastr')
+const store = require('../store')
 
 const createGameSuccess = data => {
     showToast('creategame-pass','game')
@@ -6,8 +7,6 @@ const createGameSuccess = data => {
 
 const newHighScore = () => {
     showToast('high-score','game')
-
-    
 }
 
 

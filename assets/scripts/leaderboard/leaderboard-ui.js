@@ -6,6 +6,7 @@ const getLeaderboardSuccess = data => {
     const leaderboardEntries = leaderboardTemplate({ players: data.players })
     // append formatted template to the DOM
     $('#leaderboard').html(leaderboardEntries)
+
 }
 
 const getLeaderboardFailure = data => {
