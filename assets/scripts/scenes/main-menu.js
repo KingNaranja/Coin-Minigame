@@ -41,15 +41,12 @@ class Menu extends Phaser.Scene {
 
   demo(){
 
-    console.log('the store is', store)
-    // if user is not online 
+    // if user is online 
     if (store.user) {
-      // console.log(scene)
-      console.log('scene is demo')
+      // start the gameplay scene
       this.scene.start('GamePlay')
     } else {
-      // console.log(scene)
-      console.log('scene is gameplay')
+      //  start the demo scene
       this.scene.start('Demo' )
     }
   }

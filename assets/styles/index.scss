@@ -63,7 +63,8 @@ header {
         list-style-type: none;
         li{
             flex: 1;
-            &:hover{
+            padding: 1.5rem;
+            &.hover:hover{
                 color:$primary;
                 font-size: 1.2rem;
             }
@@ -71,7 +72,7 @@ header {
         .home {
             flex: 0 1 10%;
         }
-        #show-auth-modal {
+        #show-auth-modal, #user {
             display: none;
         }
 
@@ -114,6 +115,6 @@ header {
     margin-top: -30px;
 }
 
-.demo, #demo {
+.demo, #demo, #high-score {
     color: $primary;
 }
