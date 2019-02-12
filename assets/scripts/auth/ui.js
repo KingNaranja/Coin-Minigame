@@ -32,6 +32,13 @@ const signInSuccess = data => {
   // the data's user object is assigned to a user object within the store
   store.user = data.user
 
+  $('#high-score').text(store.user.totalScore)
+  $('#show-auth-modal').text(`${store.user.nickname}`)
+  $('#user').toggle('fast')
+  $('.home').toggle('fast')
+  
+
+
   // user login feedback
   showToast('signin-pass', 'ui')
 
