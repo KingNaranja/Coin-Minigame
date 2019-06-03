@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Coin.io</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/game.js" type="text/javascript" charset="utf-8"></script>
+			<script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+			<style>html{visibility: hidden;opacity:0;}</style>
+    </head>
+    <body>
+      <header>
+        <nav>
+          <ul>
+            <li class="home" ><a href="https://kingnaranja.github.io/Coin-Minigame/"><img class="logo" src="https://raw.githubusercontent.com/KingNaranja/Coin-Minigame/master/assets/monster/logo.png" alt="game logo"></a></li>
+            <li class= "hover" id="demo">Try the demo!</li>
+            <li class= "hover" id="show-signup-modal" >Signup</li>
+						<li class= "hover" id="show-signin-modal">Login</li>
+						<li class="" id="user"><p id="user-score">High Score:<span id="high-score"></span></p></li>
+            <li class= "hover" id="show-auth-modal">Menu</li>
+          </ul>
+        </nav>
+      </header>
+
+      <main class="content">
+
+        
+				<div id="game-container" >
+					<div id="wrapper">
+						<div class="left" id='game'>
+              <h3>Use the Arrow Keys to Move. Collect the Coins !</h3>
+                
+            </div>
+            <div class="right" id="games-feed">
+              <h2>My Games</h2>
+              <!-- handlebars template -->
+              <div id="myGames"></div>
+            </div>
+					</div>
+						
+				</div>
+				
+			
+				<div class="col" id="leaderboard-container">
+					<h2>Leaderboard</h2>
+					<!-- handlebars template -->
+					<div id="leaderboard"></div>
+				</div>
+        
+      </main>
+
+      <footer class="footer">  
+          <div>Created by <a href="https://github.com/KingNaranja" title="Free Online Logo Maker">Kleide Bien-Aime</a> | Logo made with <a href="https://www.designevo.com/en/" title="Free Online Logo Maker">DesignEvo</a></div>
+      </footer>
+
+      <!-- change pass/logout modal -->
+			<div class='modal' id='user-modal'>
+					<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="userModalLabel">User Menu</h5>
+							<button type="button" class="close dismiss" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&otimes;</span>
+							</button>
+						</div>
+						<div id='user-menu' class="modal-body">
+							<div id=user-auth-error class='error'></div>
+							<h2 id="changePassResponse"></h2>
+
+
+							<form id='change-password-form'>
+								<legend>Change Password</legend>
+								<div>
+								<div>
+									<label>Old Password</label>
+									<div id='old-pass-error' class='error'></div>
+								</div>
+									<input class='pass-form' name='passwords[old]' type='password'>
+								</div>
+								<div class='w-100'></div>
+								<div>
+									<div>
+										<label>New Password</label>
+										<div id='new-pass-error' class='error'></div>
+									</div>
+									<input class='pass-form' name='passwords[new]' type='password'>
+								</div>
+								<input id="change-pass" type="submit" value='Confirm'>
+							</form>
+							<button id="sign-out" class='btn btn-secondary form-button'>Sign Out</button>
+						</div>
+					</div>
+				</div>
+      </div>
+      
+      <!-- Sign-Up Modal  -->
+      <div class='modal' id='signup-modal'>
+					<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Sign-Up</h5>
+							<button type="button" class="close dismiss" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&otimes;</span>
+							</button>
+						</div>
+						<div id='signup-menu' class="modal-body">
+							<form id='sign-up'>
+								<legend>Sign-Up to Play!</legend>
+								<div>
+                  <input type="text" name="credentials[email]" placeholder="Email">
+                  <input type="text" name="nickname" placeholder="Nickname (required)">
+                  <input type="password" name="credentials[password]" placeholder="Password">
+                  <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+                  <input type="submit" value="Sign-Up" >
+								</div>
+								<div class='w-100'></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+      <!-- Sign-In Modal  -->
+      <div class='modal' id='signin-modal'>
+					<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="userModalLabel">Sign-In</h5>
+							<button type="button" class="close dismiss" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&otimes;</span>
+							</button>
+						</div>
+						<div id='signin-menu' class="modal-body">
+							<form id='sign-in'>
+								<legend>Login!</legend>
+								<div>
+                    <input type="text" name="credentials[email]" placeholder="Email">                    <label for="Password"></label>
+                    <input type="password" name="credentials[password]" placeholder="Password">
+                    <input type="submit" value="Login">
+                  </div>
+								<div class='w-100'></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+      
+    </body>
+</html>
