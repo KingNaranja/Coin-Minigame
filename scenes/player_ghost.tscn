@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://qd0nr3p41oud"]
+
+[ext_resource type="Script" uid="uid://p7qokvqiu4ar" path="res://scripts/player.gd" id="1_32khj"]
+[ext_resource type="Texture2D" uid="uid://bphmpdwrecwj2" path="res://assets/Boo-tiful Beasts/Ghost/Ghost-128x128.png" id="1_hmsbg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32khj"]
+atlas = ExtResource("1_hmsbg")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4aahg"]
+atlas = ExtResource("1_hmsbg")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5ua3"]
+atlas = ExtResource("1_hmsbg")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmd2m"]
+atlas = ExtResource("1_hmsbg")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xy8cv"]
+atlas = ExtResource("1_hmsbg")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pvtrc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32khj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4aahg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5ua3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmd2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xy8cv")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yd0wh"]
+radius = 41.0
+height = 90.0
+
+[node name="Player_Ghost" type="CharacterBody2D" unique_id=1026478245]
+script = ExtResource("1_32khj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=30404499]
+position = Vector2(22, -20.5)
+scale = Vector2(0.828125, 0.83984375)
+sprite_frames = SubResource("SpriteFrames_pvtrc")
+autoplay = "default"
+frame_progress = 0.3368693
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1122524895]
+position = Vector2(23, -16)
+shape = SubResource("CapsuleShape2D_yd0wh")
